@@ -1,6 +1,6 @@
 {
-    "github.copilot.advanced": {
-
-    },
-    "github.copilot.chat.copilotDebugCommand.enabled": false
+"editor.fontFamily": "'Terminus', 'DejaVu Sans Mono', 'Ubuntu Mono', monospace",
+"editor.fontSize": 14,
+"editor.lineHeight": 21,
+"editor.fontLigatures": false,
 }

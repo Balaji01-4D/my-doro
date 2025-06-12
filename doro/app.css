@@ -1,8 +1,11 @@
 Screen {
     align: center middle;
+    background: $surface;
 }
 #clock {
     width: auto;
+    /* background: $panel; */
+    /* padding: 1 2; */
 }
 
 GetDuration {
@@ -12,30 +15,53 @@ GetDuration {
 GetDuration > Container {
     width: 80%;
     height: 80%;
-    background: $panel;
+    background: $surface;
+
+
+    #button-container{
+        /* width: auto; */
+        align: center middle;
+        /* background: $surface-lighten-1; */
+
+        Button{
+            /* padding: 1 1; */
+            margin: 2 2;
+        }
+    }
+
+
 
 }
 
 #header {
     align: center middle;
-    background:gray;
+    text-align: center;
+    width: 100%;
+    /* background:gray; */
     padding: 1 2;
 }
 GetDuration > Container > Horizontal{
-    width: auto;
-    height: auto;
-    padding: 2 2;
-    background: $boost;
+    /* width: auto;
+    height: auto; */
+    /* padding: 2 2; */
+    background: $surface;
 
-    Label {
-        margin: 2;
-        padding: 1 2;
-        text-align: center;
-        background: $panel;
+     Label {
+        margin: 0 3;
+        padding: 0 0 1 8; 
+        /* text-align: center; */
+        /* align: center middle; */
+        /* background: $surface;  */
         }
-    MaskedInput {
+    /* MaskedInput {
         margin: 0 4;
-        width: auto;
-        background: $panel;
+        width: 80%; 
+        background: $surface;
+    } */
+
+    .maskinput-container{
+        background: $surface-lighten-1;
+        padding: 1 1;
+        margin: 1 1 3 1;
     }
 }
