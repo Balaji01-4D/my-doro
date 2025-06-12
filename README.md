@@ -1,14 +1,19 @@
-# doro
+# 🍅 doro — Minimal & Colorful CLI Pomodoro Timer
 
-A minimal CLI Pomodoro application built in Python.
+Welcome to **doro**! A modern, vibrant, and distraction-free Pomodoro timer for your terminal, built with Python. Boost your productivity with style! ✨
 
-## Features
-- Simple and distraction-free command-line interface
-- Customizable Pomodoro and break durations
-- Visual and/or sound notifications (if supported)
-- Lightweight and fast
+---
 
-## Installation
+## 🚀 Features
+- 🎨 **Colorful, modern CLI** — Enjoy a visually pleasing experience
+- ⏲️ **Customizable Pomodoro & break durations**
+- 🔔 **Visual & sound notifications** (if supported)
+- ⚡ **Lightweight & fast**
+- 🐧 **Works on Linux, macOS, and Windows**
+
+---
+
+## 📦 Installation
 
 Clone the repository:
 
@@ -17,15 +22,17 @@ git clone https://github.com/Balaji01-4D/doro
 cd doro_project
 ```
 
-Install dependencies (if any):
+Install dependencies:
 
 ```sh
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-Run the application from the terminal:
+## 🛠️ Usage
+
+Start your Pomodoro session from the terminal:
 
 ```sh
 python -m doro.main
@@ -37,14 +44,24 @@ Or, if you have an entry point script:
 python doro/main.py
 ```
 
-Follow the on-screen instructions to start your Pomodoro session.
+Follow the on-screen instructions and enjoy your focused work session! 💪
 
-## Customization
-- You can adjust Pomodoro and break durations in the settings or via command-line arguments (if supported).
-- Explore the `doro/` directory for configuration options.
+---
 
-## Contributing
+## 🎛️ Customization
+- Adjust Pomodoro and break durations via settings or command-line arguments (if supported)
+- Explore the `doro/` directory for configuration options
+
+---
+
+## 🤝 Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-## License
-This project is licensed under the MIT License.
+---
+
+## 📄 License
+MIT License — free for personal & commercial use.
+
+---
+
+> Made with ❤️ for productivity!
