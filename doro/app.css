@@ -1,0 +1,29 @@
+Screen {
+    align: center middle;
+}
+#clock {
+    width: auto;
+}
+
+GetDuration {
+    align: center middle;
+}
+
+GetDuration > Container {
+    width: auto;
+    height: auto;
+    background: $panel;
+}
+
+GetDuration > Container > Horizontal{
+    width: auto;
+    height: auto;
+
+    Label {
+        margin: 2;
+    }
+    MaskedInput {
+        margin: 1 1;
+        width: auto;
+    }
+}
