@@ -10,20 +10,32 @@ GetDuration {
 }
 
 GetDuration > Container {
-    width: auto;
-    height: auto;
+    width: 80%;
+    height: 80%;
     background: $panel;
+
 }
 
+#header {
+    align: center middle;
+    background:gray;
+    padding: 1 2;
+}
 GetDuration > Container > Horizontal{
     width: auto;
     height: auto;
+    padding: 2 2;
+    background: $boost;
 
     Label {
         margin: 2;
-    }
+        padding: 1 2;
+        text-align: center;
+        background: $panel;
+        }
     MaskedInput {
-        margin: 1 1;
+        margin: 0 4;
         width: auto;
+        background: $panel;
     }
 }
