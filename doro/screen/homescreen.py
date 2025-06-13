@@ -1,13 +1,15 @@
 from textual.screen import Screen
-from textual.widgets import Digits, ProgressBar
+from textual.widgets import Digits, ProgressBar, Button, Static, Header
 from textual.color import Gradient
+from textual.containers import Container, Center, Middle, Horizontal
 
 from textual.events import Click
 
-from screen.getDuration import GetDuration
+from doro.screen.getDuration import GetDuration
 
 
 class HomeScreen(Screen):
+
     timer_running = False
     timer_object = None
 
@@ -23,6 +25,7 @@ class HomeScreen(Screen):
 
     def compose(self):
         gradient = Gradient.from_colors(
+            "#ff0000",
             "#881177",
             "#aa3355",
             "#cc6666",
@@ -35,32 +38,65 @@ class HomeScreen(Screen):
             "#0099cc",
             "#3366bb",
             "#663399",
+            "#881177",
+            "#aa3355",
+            "#cc6666",
+            "#ee9944",
         )
-        yield Digits("00:00", id="clock")
-        self.progress_bar = ProgressBar(
-            total=self.pomodoro * 60, 
-            id="progress_bar",
-            show_eta=False,
-            gradient=gradient
-        )
-        yield self.progress_bar
+        yield Header("Doro Clock")
+        with Container(id="home-screen-container"):
+            with Center():
+                with Middle():
+                    yield Digits("00:00", id="clock")
+                    self.progress_bar = ProgressBar(
+                        total=self.pomodoro * 60,
+                        id="progress_bar",
+                        show_eta=False,
+                        gradient=gradient,
+                    )
+                    yield self.progress_bar
+        with Horizontal(id="home-screen-controls-horizontal"):
+            yield Button("▶/||", id="start_pause_button", variant="success", classes="button")   
+            yield Button("⟳", id="reset_button", variant="error", classes="button")
+        yield Button("➕ ADD", id="add_button", variant="success")
 
+
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        """Handle button press events on the home screen."""
+        if event.button.id == "start_pause_button":
+            self.toggle_timer()
+        elif event.button.id == "reset_button":
+            self.reset__timer()
 
     def on_click(self, event: Click) -> None:
         """Handle click events on the clock widget."""
-        if event.widget.id == 'clock':
-            if not self.timer_object:
-                self.timer_object = self.set_interval(1, self.start_timer)
-                self.timer_running = True
-                self.notify("Timer started")
-            elif self.timer_running:
-                self.timer_object.pause()
-                self.timer_running = False
-                self.notify("Timer paused")
-            else:
-                self.timer_object.resume()
-                self.timer_running = True
-                self.notify("Timer resumed")
+        if event.widget.id == "clock":
+            self.toggle_timer()
+
+    def reset__timer(self):
+        """Reset the timer to its initial state."""
+        self.timer_running = False
+        self.second = 0
+        self.minute = 0
+        self.pomodoro_count = 0
+        self.timer_object.pause() if self.timer_object else None
+        self.update_clock()
+        self.progress_bar.update(progress=0)
+        self.notify("Timer reset")
+
+    def toggle_timer(self):
+        if not self.timer_object:
+            self.timer_object = self.set_interval(1, self.start_timer)
+            self.timer_running = True
+            self.notify("Timer started")
+        elif self.timer_running:
+            self.timer_object.pause()
+            self.timer_running = False
+            self.notify("Timer paused")
+        else:
+            self.timer_object.resume()
+            self.timer_running = True
 
 
     def update_clock(self) -> None:
@@ -69,42 +105,41 @@ class HomeScreen(Screen):
     def start_timer(self):
         """Increment the timer by one second and update the display."""
         self.second += 1
-        self.progress_bar.update(progress=(self.minute * 60 )+ self.second)
-        if (self.second == 60):
+        self.progress_bar.update(progress=(self.minute * 60) + self.second)
+        if self.second == 60:
             self.second = 0
             self.minute += 1
-        
-        # Handle Pomodoro cycle transitions
-        if (self.minute >= self.pomodoro):
+
+        if self.minute >= self.pomodoro:
             self.minute = 0
             self.second = 0
             self.pomodoro_count += 1
-            
-            # Determine what type of break to take
-            if (self.pomodoro_count == self.cycles):
-                # Long break after completing all cycles
+
+            if self.pomodoro_count == self.cycles:
                 self.notify("Time for a long break!")
                 self.current_period = self.long_break
             else:
-                # Short break after each pomodoro
                 self.notify("Time for a short break!")
                 self.current_period = self.short_break
-        
-        # Handle break time completion
-        elif hasattr(self, 'current_period') and self.minute >= self.current_period:
+
+        elif hasattr(self, "current_period") and self.minute >= self.current_period:
             self.minute = 0
             self.second = 0
             self.notify("Break over! Time to work!")
-            # Reset to work period
             self.current_period = None
 
-        timer_format = f'{self.minute:02d}:{self.second:02d}'
+        timer_format = f"{self.minute:02d}:{self.second:02d}"
         self.query_one(Digits).update(f"{timer_format}")
 
-
     def key_m(self):
-        self.push_screen(GetDuration(self.set_timer_limits))
-    
-    def set_timer_limits(self, pomodorolist: list[int]):
-        ...
+        self.app.push_screen(GetDuration(self.set_timer_limits))
 
+    def set_timer_limits(self, pomodorolist: list[int]):
+        """Set the timer limits based on user input."""
+        self.pomodoro = pomodorolist[0]
+        self.short_break = pomodorolist[1]
+        self.long_break = pomodorolist[2]
+        self.cycles = pomodorolist[3]
+        self.progress_bar.total = self.pomodoro * 60
+        self.update_clock()
+        self.notify("Timer limits updated")

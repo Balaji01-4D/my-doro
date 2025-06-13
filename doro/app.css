@@ -1,4 +1,5 @@
-Screen {
+
+#home-screen {
     align: center middle;
     background: $surface;
 }
@@ -10,6 +11,9 @@ Screen {
 
 GetDuration {
     align: center middle;
+}
+.button{
+    margin: 0 2;
 }
 
 GetDuration > Container {
@@ -29,8 +33,13 @@ GetDuration > Container {
         }
     }
 
-
-
+}
+#home-screen-controls-horizontal{
+    align: center middle;
+    width: 100%;
+    /* background: $panel; */
+    padding: 1 2;
+    
 }
 
 #header {

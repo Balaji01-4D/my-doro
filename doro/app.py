@@ -1,16 +1,27 @@
 from textual.app import App
+from textual.widgets import Header
+from doro.screen.homescreen import HomeScreen
 
-from screen.homescreen import HomeScreen
 
-class ClockApp(App):
+class Doro(App):
 
     CSS_PATH = "./app.css"
 
-    def on_mount(self):
-        self.push_screen(HomeScreen())
+    theme = "monokai"
 
+
+    def compose(self):
+        yield Header("Doro Clock")
+        
+
+    def on_mount(self):
+        self.push_screen(HomeScreen(id="home-screen"))
+
+
+def main():
+    app = Doro()
+    app.run()
 
 
 if __name__ == "__main__":
-    app = ClockApp()
-    app.run()
+    main()
