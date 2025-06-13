@@ -47,4 +47,4 @@ class GetDuration(ModalScreen):
                 ]
             )
         elif event.button.id == "cancel_button":
-            self.dismiss(False)
+            self.dismiss([])

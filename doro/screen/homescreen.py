@@ -1,7 +1,7 @@
 from textual.screen import Screen
-from textual.widgets import Digits, ProgressBar, Button, Static, Header
+from textual.widgets import Digits, ProgressBar, Button, Header
 from textual.color import Gradient
-from textual.containers import Container, Center, Middle, Horizontal
+from textual.containers import Container, Center, Middle, Horizontal, Right
 
 from textual.events import Click
 
@@ -10,7 +10,10 @@ from doro.screen.getDuration import GetDuration
 
 class HomeScreen(Screen):
 
+    AUTO_FOCUS = None
+
     timer_running = False
+
     timer_object = None
 
     second = 0
@@ -25,7 +28,6 @@ class HomeScreen(Screen):
 
     def compose(self):
         gradient = Gradient.from_colors(
-            "#ff0000",
             "#881177",
             "#aa3355",
             "#cc6666",
@@ -44,6 +46,8 @@ class HomeScreen(Screen):
             "#ee9944",
         )
         yield Header("Doro Clock")
+        with Right():
+            yield Button("➕ ADD", id="add_button", variant="success")
         with Container(id="home-screen-container"):
             with Center():
                 with Middle():
@@ -52,13 +56,11 @@ class HomeScreen(Screen):
                         total=self.pomodoro * 60,
                         id="progress_bar",
                         show_eta=False,
-                        gradient=gradient,
                     )
                     yield self.progress_bar
         with Horizontal(id="home-screen-controls-horizontal"):
             yield Button("▶/||", id="start_pause_button", variant="success", classes="button")   
             yield Button("⟳", id="reset_button", variant="error", classes="button")
-        yield Button("➕ ADD", id="add_button", variant="success")
 
 
 
@@ -68,6 +70,9 @@ class HomeScreen(Screen):
             self.toggle_timer()
         elif event.button.id == "reset_button":
             self.reset__timer()
+        elif event.button.id == "add_button":
+            self.app.push_screen(GetDuration(), self.set_timer_limits)
+
 
     def on_click(self, event: Click) -> None:
         """Handle click events on the clock widget."""
@@ -132,14 +137,15 @@ class HomeScreen(Screen):
         self.query_one(Digits).update(f"{timer_format}")
 
     def key_m(self):
-        self.app.push_screen(GetDuration(self.set_timer_limits))
+        self.app.push_screen(GetDuration(), self.set_timer_limits)
 
     def set_timer_limits(self, pomodorolist: list[int]):
         """Set the timer limits based on user input."""
-        self.pomodoro = pomodorolist[0]
-        self.short_break = pomodorolist[1]
-        self.long_break = pomodorolist[2]
-        self.cycles = pomodorolist[3]
+        self.notify("updated")
+        self.pomodoro = int( pomodorolist[0])
+        self.short_break = int(pomodorolist[1])
+        self.long_break = int(pomodorolist[2])
+        self.cycles = int(pomodorolist[3])
         self.progress_bar.total = self.pomodoro * 60
         self.update_clock()
         self.notify("Timer limits updated")

@@ -5,9 +5,8 @@ from doro.screen.homescreen import HomeScreen
 
 class Doro(App):
 
+    AUTO_FOCUS = None
     CSS_PATH = "./app.css"
-
-    theme = "monokai"
 
 
     def compose(self):
@@ -15,6 +14,7 @@ class Doro(App):
         
 
     def on_mount(self):
+        self.theme = "dracula"
         self.push_screen(HomeScreen(id="home-screen"))
 
 

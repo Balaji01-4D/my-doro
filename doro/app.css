@@ -2,13 +2,55 @@
 #home-screen {
     align: center middle;
     background: $surface;
+    color: $primary;
+    /* border: round $primary 50%;
+    border-top: none; */
+}
+
+#home-screen-container{
+    background: $surface;
+
+}
+
+* {
+    &:focus{
+        background-tint: transparent;
+    }
+}
+
+Toast {
+    background: $surface-lighten-1;
+    border-right: none;
+
 }
 #clock {
     width: auto;
+    border: round $primary 20%;
+    height: auto;
+    /* background: $surface-lighten-1; */
+
     /* background: $panel; */
-    /* padding: 1 2; */
+    padding: 1 7;
 }
 
+#progress_bar{
+    width: auto;
+    /* background: $surface-lighten-1; */
+
+    .bar--bar{
+        color: $primary 100%;
+        background: $primary 20%;
+    }
+    .bar--indeterminate{
+        color:red;
+    }
+}
+
+#add_button{
+    align-horizontal: right;
+    margin: 1 1;
+
+}
 GetDuration {
     align: center middle;
 }
@@ -21,6 +63,8 @@ GetDuration > Container {
     height: 80%;
     background: $surface;
 
+    border: round $surface-lighten-2;
+    color: $primary;
 
     #button-container{
         /* width: auto; */
@@ -56,21 +100,23 @@ GetDuration > Container > Horizontal{
     background: $surface;
 
      Label {
-        margin: 0 3;
+        /* margin: 0 3; */
         padding: 0 0 1 8; 
         /* text-align: center; */
         /* align: center middle; */
         /* background: $surface;  */
         }
-    /* MaskedInput {
-        margin: 0 4;
-        width: 80%; 
-        background: $surface;
-    } */
+    MaskedInput {
+        /* margin: 0 4; */
+        /* width: 80%;  */
+        background: $surface-lighten-2;
+        color: $primary-lighten-2;
+    }
 
     .maskinput-container{
-        background: $surface-lighten-1;
-        padding: 1 1;
+        /* background: $surface-lighten-1; */
+        /* padding: 1 1; */
         margin: 1 1 3 1;
+        border: round $surface-lighten-2;
     }
 }
