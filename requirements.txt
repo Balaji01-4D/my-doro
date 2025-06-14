@@ -8,3 +8,4 @@ rich==14.0.0
 textual==3.3.0
 typing-extensions==4.14.0
 uc-micro-py==1.0.3
+plyer==2.1.0

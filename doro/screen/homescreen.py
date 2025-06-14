@@ -4,6 +4,7 @@ from textual.color import Gradient
 from textual.containers import Container, Center, Middle, Horizontal, Right
 
 from textual.events import Click
+from plyer import notification
 
 from doro.screen.getDuration import GetDuration
 
@@ -26,6 +27,24 @@ class HomeScreen(Screen):
 
     cycles = 3
 
+    def native_notify(self, message, title="Doro Clock"):
+        """Display a native system notification.
+        
+        Args:
+            message: The notification message to display
+            title: The title of the notification (defaults to 'Doro Clock')
+        """
+        try:
+            notification.notify(
+                title=title,
+                message=message,
+                app_name="Doro",
+                timeout=5  # seconds
+            )
+        except Exception as e:
+            # Fallback to in-app notification if native notification fails
+            self.notify(f"{message}")
+    
     def compose(self):
         """Create and layout the UI elements for the pomodoro timer screen.
         
@@ -92,6 +111,7 @@ class HomeScreen(Screen):
         self.timer_object.pause() if self.timer_object else None
         self.update_clock()
         self.progress_bar.update(progress=0)
+        self.native_notify("Timer reset")
         self.notify("Timer reset")
 
     def toggle_timer(self):
@@ -103,14 +123,18 @@ class HomeScreen(Screen):
         if not self.timer_object:
             self.timer_object = self.set_interval(1, self.start_timer)
             self.timer_running = True
+            self.native_notify("Timer started")
             self.notify("Timer started")
         elif self.timer_running:
             self.timer_object.pause()
             self.timer_running = False
+            self.native_notify("Timer paused")
             self.notify("Timer paused")
         else:
             self.timer_object.resume()
             self.timer_running = True
+            self.native_notify("Timer resumed")
+            self.notify("Timer resumed")
 
 
     def update_clock(self) -> None:
@@ -135,15 +159,18 @@ class HomeScreen(Screen):
             self.pomodoro_count += 1
 
             if self.pomodoro_count == self.cycles:
+                self.native_notify("Time for a long break!")
                 self.notify("Time for a long break!")
                 self.current_period = self.long_break
             else:
+                self.native_notify("Time for a short break!")
                 self.notify("Time for a short break!")
                 self.current_period = self.short_break
 
         elif hasattr(self, "current_period") and self.minute >= self.current_period:
             self.minute = 0
             self.second = 0
+            self.native_notify("Break over! Time to work!")
             self.notify("Break over! Time to work!")
             self.current_period = None
 
@@ -156,11 +183,11 @@ class HomeScreen(Screen):
 
     def set_timer_limits(self, pomodorolist: list[int]):
         """Set the timer limits based on user input."""
-        self.notify("updated")
         self.pomodoro = int( pomodorolist[0])
         self.short_break = int(pomodorolist[1])
         self.long_break = int(pomodorolist[2])
         self.cycles = int(pomodorolist[3])
         self.progress_bar.total = self.pomodoro * 60
         self.update_clock()
+        self.native_notify("Timer limits updated")
         self.notify("Timer limits updated")
