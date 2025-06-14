@@ -27,6 +27,10 @@ class HomeScreen(Screen):
     cycles = 3
 
     def compose(self):
+        """Create and layout the UI elements for the pomodoro timer screen.
+        
+        Creates the main timer display, progress bar, and control buttons.
+        """
         gradient = Gradient.from_colors(
             "#881177",
             "#aa3355",
@@ -91,6 +95,11 @@ class HomeScreen(Screen):
         self.notify("Timer reset")
 
     def toggle_timer(self):
+        """Start, pause, or resume the timer.
+        
+        Creates a new timer interval if one doesn't exist, pauses if running,
+        or resumes if paused.
+        """
         if not self.timer_object:
             self.timer_object = self.set_interval(1, self.start_timer)
             self.timer_running = True
@@ -105,10 +114,15 @@ class HomeScreen(Screen):
 
 
     def update_clock(self) -> None:
+        """Reset the clock display to 00:00."""
         self.query_one(Digits).update(f"00:00")
 
     def start_timer(self):
-        """Increment the timer by one second and update the display."""
+        """Increment the timer by one second and update the display.
+        
+        Handles pomodoro cycle transitions between work and break periods,
+        manages notifications, and updates the UI elements.
+        """
         self.second += 1
         self.progress_bar.update(progress=(self.minute * 60) + self.second)
         if self.second == 60:
@@ -137,6 +151,7 @@ class HomeScreen(Screen):
         self.query_one(Digits).update(f"{timer_format}")
 
     def key_m(self):
+        """Open the duration settings screen when 'm' key is pressed."""
         self.app.push_screen(GetDuration(), self.set_timer_limits)
 
     def set_timer_limits(self, pomodorolist: list[int]):
