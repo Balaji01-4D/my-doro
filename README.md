@@ -34,17 +34,22 @@ Welcome to **MyDoro**! A modern, vibrant, and distraction-free Pomodoro timer fo
 
 ## 📦 Installation
 
-Clone the repository:
+### From PyPI
+
+The easiest way to install MyDoro is via pip:
 
 ```sh
-git clone https://github.com/Balaji01-4D/mydoro
-cd mydoro_project
+pip install mydoro
 ```
 
-Install dependencies:
+### From Source
+
+Alternatively, you can install from source:
 
 ```sh
-pip install -r requirements.txt
+git clone https://github.com/Balaji01-4D/my-doro
+cd my-doro
+pip install .
 ```
 
 ---
@@ -54,13 +59,7 @@ pip install -r requirements.txt
 Start your Pomodoro session from the terminal:
 
 ```sh
-python -m mydoro.main
-```
-
-Or, if you have an entry point script:
-
-```sh
-python mydoro/main.py
+mydoro
 ```
 
 ### Command-line Arguments
@@ -69,25 +68,25 @@ Customize your Pomodoro experience with these command-line options:
 
 ```sh
 # Display version information
-python -m mydoro.main --version
+mydoro --version
 
 # Set custom pomodoro duration (in minutes)
-python -m mydoro.main --pomodoro 30
+mydoro --pomodoro 30
 
 # Set custom short break duration (in minutes)
-python -m mydoro.main --short-break 8
+mydoro --short-break 8
 
 # Set custom long break duration (in minutes)
-python -m mydoro.main --long-break 20
+mydoro --long-break 20
 
 # Set number of cycles before a long break
-python -m mydoro.main --cycles 4
+mydoro --cycles 4
 
 # Set application theme (options: dracula, monokai, github_dark, github_light)
-python -m mydoro.main --theme monokai
+mydoro --theme monokai
 
 # Combine multiple options
-python -m mydoro.main --pomodoro 30 --short-break 8 --long-break 20 --cycles 4 --theme dracula
+mydoro --pomodoro 30 --short-break 8 --long-break 20 --cycles 4 --theme dracula
 ```
 
 Follow the on-screen instructions and enjoy your focused work session! 💪
@@ -118,7 +117,7 @@ Follow the on-screen instructions and enjoy your focused work session! 💪
 
 ## 🎛️ Customization
 - Adjust Pomodoro and break durations via settings or command-line arguments (if supported)
-- Explore the `doro/` directory for configuration options
+- Explore the `mydoro/` directory for configuration options
 
 ---
 
