@@ -28,6 +28,8 @@ Welcome to **Doro**! A modern, vibrant, and distraction-free Pomodoro timer for 
 - ⚡ **Lightweight & fast**
 - 🐧 **Works on Linux, macOS, and Windows**
 
+> **Note:** If you don't hear the bell sound notifications, you may need to configure your terminal's bell sound settings. Most modern terminals allow this in their preferences or settings menu.
+
 ---
 
 ## 📦 Installation
