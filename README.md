@@ -91,6 +91,16 @@ mydoro --pomodoro 30 --short-break 8 --long-break 20 --cycles 4 --theme dracula
 
 Follow the on-screen instructions and enjoy your focused work session! 💪
 
+### Keyboard Shortcuts
+
+MyDoro comes with convenient keyboard shortcuts for quick access to features:
+
+| Shortcut | Action |
+|----------|--------|
+| <kbd>m</kbd> | Open Add Custom Duration screen |
+| <kbd>Ctrl</kbd> + <kbd>p</kbd> | Open command prompt to change theme |
+| <kbd>Ctrl</kbd> + <kbd>q</kbd> | Exit application |
+
 ---
 
 ## 📸 Screenshots
