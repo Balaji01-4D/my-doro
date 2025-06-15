@@ -48,6 +48,36 @@ Follow the on-screen instructions and enjoy your focused work session! 💪
 
 ---
 
+## 🧪 Testing
+
+### Core Timer Tests
+
+Run the core timer functionality tests to verify timer state transitions, progress calculation, and more:
+
+```sh
+python test_timer_core.py
+```
+
+### Quick UI Testing
+
+For quick testing of the UI with shortened timer durations:
+
+```sh
+python run_test_app.py
+```
+
+This runs the app with 1-minute pomodoro periods and breaks for faster testing.
+
+### Full Test Suite
+
+To run the complete test suite:
+
+```sh
+python run_tests.py
+```
+
+---
+
 ## 🎛️ Customization
 - Adjust Pomodoro and break durations via settings or command-line arguments (if supported)
 - Explore the `doro/` directory for configuration options

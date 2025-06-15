@@ -1,7 +1,7 @@
 [project]
 name = "doro-project"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = "A Pomodoro timer application with customizable work and break intervals"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -16,5 +16,10 @@ dependencies = [
     "typing-extensions==4.14.0",
     "uc-micro-py==1.0.3",
     "plyer==2.1.0",
-    "pyler>=0.2.0",
 ]
+
+[project.scripts]
+doro = "doro.main:main_cli"
+
+[tool.setuptools]
+packages = ["doro"]

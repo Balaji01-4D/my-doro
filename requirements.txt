@@ -9,7 +9,6 @@ mdurl==0.1.2
 platformdirs==4.3.8
 plyer==2.1.0
 pygments==2.19.1
-plyer==2.1.0
 requests==2.32.4
 rich==14.0.0
 soupsieve==2.7
