@@ -1,25 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "doro-project"
-version = "0.1.1"
-description = "A Pomodoro timer application with customizable work and break intervals"
+name = "doro"
+version = "0.1.0"
+description = "✨ Doro: A sleek, modern Pomodoro timer for your terminal. Boost productivity with customizable work/break intervals, beautiful themes, and a distraction-free CLI experience. Perfect for developers who value both functionality and aesthetics."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    {name = "Balaji", email = "j.balaji2468@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Utilities",
+]
 dependencies = [
-    "linkify-it-py==2.0.3",
-    "markdown-it-py==3.0.0",
-    "mdit-py-plugins==0.4.2",
-    "mdurl==0.1.2",
-    "platformdirs==4.3.8",
-    "pygments==2.19.1",
-    "rich==14.0.0",
-    "textual==3.3.0",
-    "typing-extensions==4.14.0",
-    "uc-micro-py==1.0.3",
-    "plyer==2.1.0",
+    "linkify-it-py>=2.0.3",
+    "markdown-it-py>=3.0.0",
+    "mdit-py-plugins>=0.4.2",
+    "mdurl>=0.1.2",
+    "platformdirs>=4.3.8",
+    "pygments>=2.19.1",
+    "rich>=14.0.0",
+    "textual>=3.3.0",
+    "typing-extensions>=4.14.0",
+    "uc-micro-py>=1.0.3",
+    "plyer>=2.1.0",
 ]
 
 [project.scripts]
 doro = "doro.main:main_cli"
 
 [tool.setuptools]
-packages = ["doro"]
+packages = ["doro", "doro.screen", "doro.utils", "doro.widgets"]
+
+[tool.setuptools.package-data]
+doro = ["app.css"]

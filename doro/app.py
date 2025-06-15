@@ -1,5 +1,4 @@
 from textual.app import App
-from textual.widgets import Header
 from doro.screen.homescreen import HomeScreen
 from doro.utils.config import ConfigHandler
 
@@ -18,12 +17,7 @@ class Doro(App):
         super().__init__(*args, **kwargs)
         self.config_handler = ConfigHandler()
         self.config_overrides = config_overrides or {}
-
-    def compose(self):
-        """Create and layout the UI elements for the main application."""
-        yield Header("Doro Clock")
         
-
     def on_mount(self):
         """Handle the application mount event."""
         # Apply any config overrides from command line arguments

@@ -3,3 +3,7 @@
 /how_to_write_test.txt
 /.pytest_cache/
 /.mypy_cache/
+/dist/
+/doro.egg-info/
+/.vscode/
+/temp.py
