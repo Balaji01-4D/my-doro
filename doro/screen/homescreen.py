@@ -58,12 +58,14 @@ class HomeScreen(Screen):
             self.progress_bar.total = self.pomodoro * 60
 
     def native_notify(self, message, title="Doro Clock"):
+        
         """Display a native system notification.
         
         Args:
             message: The notification message to display
             title: The title of the notification (defaults to 'Doro Clock')
         """
+        self.app.bell()
         try:
             notification.notify(
                 title=title,
