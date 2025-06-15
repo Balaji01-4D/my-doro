@@ -12,6 +12,26 @@
 
 }
 
+#state_label {
+    align: center middle;
+    width: 100%;
+    /* background: $panel; */
+    padding: 1 2;
+    color: $primary;
+    text-align: center;
+}
+
+#state_label.-working {
+    background: $success 10%;
+    color: $success;
+}
+
+#state_label.-break {
+    background: $error 20%;
+    color: $error 100%;
+}
+
+
 * {
     &:focus{
         background-tint: transparent;
