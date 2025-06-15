@@ -1,9 +1,9 @@
 # Include application CSS
-include doro/app.css
+include mydoro/app.css
 
 # Include documentation
 include README.md
 include LICENSE
 
 # Include package data
-recursive-include doro *.py *.css
+recursive-include mydoro *.py *.css

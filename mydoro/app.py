@@ -1,15 +1,15 @@
 from textual.app import App
-from doro.screen.homescreen import HomeScreen
-from doro.utils.config import ConfigHandler
+from mydoro.screen.homescreen import HomeScreen
+from mydoro.utils.config import ConfigHandler
 
 
-class Doro(App):
+class MyDoro(App):
 
     AUTO_FOCUS = None
     CSS_PATH = "./app.css"
     
     def __init__(self, *args, config_overrides=None, **kwargs):
-        """Initialize the Doro application.
+        """Initialize the MyDoro application.
         
         Args:
             config_overrides: Optional dictionary of config values to override
@@ -61,7 +61,7 @@ def main(args=None):
         if hasattr(args, "theme") and args.theme is not None:
             config_overrides["theme"] = args.theme
     
-    app = Doro(config_overrides=config_overrides)
+    app = MyDoro(config_overrides=config_overrides)
     app.run()
 
 

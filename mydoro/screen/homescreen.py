@@ -6,18 +6,18 @@ from typing import List
 from textual.events import Click
 from plyer import notification
 
-from doro.screen.getDuration import GetDuration
-from doro.timer_state import TimerState
-from doro.utils.timer_utils import format_time, calculate_progress
-from doro.widgets.digits import DoroTimer
+from mydoro.screen.getDuration import GetDuration
+from mydoro.timer_state import TimerState
+from mydoro.utils.timer_utils import format_time, calculate_progress
+from mydoro.widgets.digits import DoroTimer
 
 from textual.events import Click
 from plyer import notification
 
-from doro.screen.getDuration import GetDuration
-from doro.timer_state import TimerState
-from doro.utils.timer_utils import format_time, calculate_progress
-from doro.widgets.digits import DoroTimer
+from mydoro.screen.getDuration import GetDuration
+from mydoro.timer_state import TimerState
+from mydoro.utils.timer_utils import format_time, calculate_progress
+from mydoro.widgets.digits import DoroTimer
 
 
 class HomeScreen(Screen):

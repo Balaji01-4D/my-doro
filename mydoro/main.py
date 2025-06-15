@@ -1,7 +1,7 @@
-"""Main entry point for the Doro application."""
+"""Main entry point for the MyDoro application."""
 import argparse
-from doro.app import main
-from doro import __version__
+from mydoro.app import main
+from mydoro import __version__
 
 
 def parse_arguments():
@@ -11,12 +11,12 @@ def parse_arguments():
         Parsed arguments
     """
     parser = argparse.ArgumentParser(
-        description="Doro - A modern Pomodoro timer for your terminal"
+        description="MyDoro - A modern Pomodoro timer for your terminal"
     )
     parser.add_argument(
         "--version", 
         action="version", 
-        version=f"Doro {__version__}",
+        version=f"MyDoro {__version__}",
         help="Show version information and exit"
     )
     parser.add_argument(

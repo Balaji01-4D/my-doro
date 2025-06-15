@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "doro"
+name = "mydoro"
 version = "1.0.0"
-description = "✨ Doro: A sleek, modern Pomodoro timer for your terminal. Boost productivity with customizable work/break intervals, beautiful themes, and a distraction-free CLI experience. Perfect for developers who value both functionality and aesthetics."
+description = "✨ MyDoro: A sleek, modern Pomodoro timer for your terminal. Boost productivity with customizable work/break intervals, beautiful themes, and a distraction-free CLI experience. Perfect for developers who value both functionality and aesthetics."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -33,10 +33,10 @@ dependencies = [
 ]
 
 [project.scripts]
-doro = "doro.main:main_cli"
+mydoro = "mydoro.main:main_cli"
 
 [tool.setuptools]
-packages = ["doro", "doro.screen", "doro.utils", "doro.widgets"]
+packages = ["mydoro", "mydoro.screen", "mydoro.utils", "mydoro.widgets"]
 
 [tool.setuptools.package-data]
-doro = ["app.css"]
+mydoro = ["app.css"]
