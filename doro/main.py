@@ -1,5 +1,4 @@
 """Main entry point for the Doro application."""
-import sys
 import argparse
 from doro.app import main
 from doro import __version__

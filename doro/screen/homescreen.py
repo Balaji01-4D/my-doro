@@ -1,8 +1,7 @@
 from textual.screen import Screen
 from textual.widgets import ProgressBar, Button, Static
 from textual.containers import Container, Center, Middle, Horizontal, Right
-from textual.timer import Timer
-from typing import Optional, List, Callable, Union
+from typing import List
 
 from textual.events import Click
 from plyer import notification

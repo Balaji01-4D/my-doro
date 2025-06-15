@@ -1,7 +1,5 @@
 from textual.widgets import Digits
-from textual.events import Event, Click
 from typing import Optional, ClassVar
-from rich.style import Style
 
 
 class DoroTimer(Digits):

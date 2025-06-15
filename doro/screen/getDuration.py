@@ -1,7 +1,6 @@
 from textual.screen import ModalScreen
 from textual.widgets import MaskedInput, Label, Button
 from textual.containers import Container, Vertical, Horizontal
-from typing import List, Optional, Union
 
 
 class GetDuration(ModalScreen):
