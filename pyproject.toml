@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "doro"
-version = "0.1.0"
+version = "1.0.0"
 description = "✨ Doro: A sleek, modern Pomodoro timer for your terminal. Boost productivity with customizable work/break intervals, beautiful themes, and a distraction-free CLI experience. Perfect for developers who value both functionality and aesthetics."
 readme = "README.md"
 requires-python = ">=3.10"
