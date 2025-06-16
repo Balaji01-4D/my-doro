@@ -1,4 +1,3 @@
-"""MyDoro - A Pomodoro Timer Application"""
 
 __version__ = "1.0.0"
 __author__ = "Balaji"
