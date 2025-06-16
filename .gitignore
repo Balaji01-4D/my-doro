@@ -4,6 +4,6 @@
 /.pytest_cache/
 /.mypy_cache/
 /dist/
-/doro.egg-info/
+/mydoro.egg-info/
 /.vscode/
 /temp.py

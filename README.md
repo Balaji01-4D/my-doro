@@ -42,16 +42,6 @@ The easiest way to install MyDoro is via pip:
 pip install mydoro
 ```
 
-### From Source
-
-Alternatively, you can install from source:
-
-```sh
-git clone https://github.com/Balaji01-4D/my-doro
-cd my-doro
-pip install .
-```
-
 ---
 
 ## 🛠️ Usage
@@ -105,23 +95,25 @@ MyDoro comes with convenient keyboard shortcuts for quick access to features:
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="img/timer.png" alt="MyDoro Timer" width="45%" hspace="10">
-  <img src="img/add_duration.png" alt="Add Duration Screen" width="45%" hspace="10">
-</p>
+<div align="center">
+  <!-- First row: Timer and Duration Settings -->
+  <div>
+    <img src="img/timer.png" alt="MyDoro Timer" style="max-width: 100%; width: 45%; min-width: 300px; margin: 10px;" />
+    <img src="img/add_duration.png" alt="Add Duration Screen" style="max-width: 100%; width: 45%; min-width: 300px; margin: 10px;" />
+  </div>
+  <p>
+    <b>Main Timer Interface</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Custom Duration Settings</b>
+  </p>
 
-<p align="center">
-  <b>Main Timer Interface</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Custom Duration Settings</b>
-</p>
-
-<p align="center">
-  <img src="img/short_break.png" alt="Short Break - Default Theme" width="45%" hspace="10">
-  <img src="img/short_break_monokai.png" alt="Short Break - Monokai Theme" width="45%" hspace="10">
-</p>
-
-<p align="center">
-  <b>Short Break - Default Theme</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Short Break - Monokai Theme</b>
-</p>
+  <!-- Second row: Short Breaks -->
+  <div>
+    <img src="img/short_break.png" alt="Short Break - Default Theme" style="max-width: 100%; width: 45%; min-width: 300px; margin: 10px;" />
+    <img src="img/short_break_monokai.png" alt="Short Break - Monokai Theme" style="max-width: 100%; width: 45%; min-width: 300px; margin: 10px;" />
+  </div>
+  <p>
+    <b>Short Break - Default Theme</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Short Break - Monokai Theme</b>
+  </p>
+</div>
 
 ---
 
