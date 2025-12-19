@@ -1,4 +1,5 @@
-<h1 align="center">MyDoro 🕰️</h1>
+
+<h1 align="center">MyDoro</h1>
 
 <div align="center">
 
@@ -15,24 +16,24 @@
 
 </div>
 
-# 🕰️ MyDoro — Minimal & Colorful CLI Pomodoro Timer
+# MyDoro — Minimal & Colorful CLI Pomodoro Timer
 
-Welcome to **MyDoro**! A modern, vibrant, and distraction-free Pomodoro timer for your terminal, built with Python. Boost your productivity with style! ✨
+Welcome to **MyDoro**! A modern, vibrant, and distraction-free Pomodoro timer for your terminal, built with Python. Boost your productivity with style!
 
 ---
 
-## 🚀 Features
-- 🎨 **Colorful, modern CLI** — Enjoy a visually pleasing experience
-- ⏲️ **Customizable Pomodoro & break durations**
-- 🔔 **Visual & sound notifications** (if supported)
-- ⚡ **Lightweight & fast**
-- 🐧 **Works on Linux, macOS, and Windows**
+## Features
+- **Colorful, modern CLI** — Enjoy a visually pleasing experience
+- **Customizable Pomodoro & break durations**
+- **Visual & sound notifications** (if supported)
+- **Lightweight & fast**
+- **Works on Linux, macOS, and Windows**
 
 > **Note:** If you don't hear the bell sound notifications, you may need to configure your terminal's bell sound settings. Most modern terminals allow this in their preferences or settings menu.
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### From PyPI
 
@@ -40,11 +41,11 @@ The easiest way to install MyDoro is via pip:
 
 ```sh
 pip install mydoro
-```
+````
 
 ---
 
-## 🛠️ Usage
+## Usage
 
 Start your Pomodoro session from the terminal:
 
@@ -79,21 +80,21 @@ mydoro --theme monokai
 mydoro --pomodoro 30 --short-break 8 --long-break 20 --cycles 4 --theme dracula
 ```
 
-Follow the on-screen instructions and enjoy your focused work session! 💪
+Follow the on-screen instructions and enjoy your focused work session!
 
 ### Keyboard Shortcuts
 
 MyDoro comes with convenient keyboard shortcuts for quick access to features:
 
-| Shortcut | Action |
-|----------|--------|
-| <kbd>m</kbd> | Open Add Custom Duration screen |
+| Shortcut                       | Action                              |
+| ------------------------------ | ----------------------------------- |
+| <kbd>m</kbd>                   | Open Add Custom Duration screen     |
 | <kbd>Ctrl</kbd> + <kbd>p</kbd> | Open command prompt to change theme |
-| <kbd>Ctrl</kbd> + <kbd>q</kbd> | Exit application |
+| <kbd>Ctrl</kbd> + <kbd>q</kbd> | Exit application                    |
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 <div align="center">
   <!-- First row: Timer and Duration Settings -->
@@ -106,6 +107,7 @@ MyDoro comes with convenient keyboard shortcuts for quick access to features:
   </p>
 
   <!-- Second row: Short Breaks -->
+
   <div>
     <img src="img/short_break.png" alt="Short Break - Default Theme" style="max-width: 100%; width: 45%; min-width: 300px; margin: 10px;" />
     <img src="img/short_break_monokai.png" alt="Short Break - Monokai Theme" style="max-width: 100%; width: 45%; min-width: 300px; margin: 10px;" />
@@ -117,20 +119,19 @@ MyDoro comes with convenient keyboard shortcuts for quick access to features:
 
 ---
 
-## 🎛️ Customization
-- Adjust Pomodoro and break durations via settings or command-line arguments (if supported)
-- Explore the `mydoro/` directory for configuration options
+## Customization
+
+* Adjust Pomodoro and break durations via settings or command-line arguments (if supported)
+* Explore the `mydoro/` directory for configuration options
 
 ---
 
-## 🤝 Contributing
+## Contributing
+
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
-## 📄 License
+## License
+
 MIT License — free for personal & commercial use.
-
----
-
-> Made with ❤️ for productivity!
